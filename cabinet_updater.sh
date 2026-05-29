@@ -29,9 +29,6 @@ fi
 
 cd "$WORK_DIR" || exit
 
-echo -e "\e[33m[*] Останавливаем текущие контейнеры бота (down)...\e[0m"
-docker compose down
-
 echo -e "\e[33m[*] Удаляем старые файлы кабинета...\e[0m"
 sudo rm -rf cabinet-dist
 sudo rm -rf /srv/cabinet
@@ -48,9 +45,6 @@ echo -e "\e[33m[*] Копируем файлы в /srv/cabinet...\e[0m"
 sudo mkdir -p /srv/cabinet
 sudo cp -r ./cabinet-dist/* /srv/cabinet/
 
-echo -e "\e[33m[*] Поднимаем контейнеры бота (up -d)...\e[0m"
-docker compose up -d
-
 echo ""
 echo "=========================================="
 echo " Выбери способ перезагрузки Caddy:"
@@ -59,7 +53,8 @@ echo " 1) Caddy через APT (systemctl)"
 echo " 2) Caddy через Docker"
 echo " 3) Пропустить перезагрузку"
 echo "=========================================="
-read -rp "Введи цифру (1/2/3): " CADDY_CHOICE
+# Читаем ввод напрямую с терминала, чтобы curl | bash не ломал скрипт
+read -rp "Введи цифру (1/2/3): " CADDY_CHOICE < /dev/tty
 echo ""
 
 case $CADDY_CHOICE in
