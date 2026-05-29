@@ -1,8 +1,47 @@
+
 # 🔄 Bedolaga Cabinet Auto Update
 
 Простой bash-скрипт для автоматизации процесса обновления веб-кабинета **Bedolaga Bot**. 
 
 Скрипт самостоятельно скачивает последнюю версию образа, извлекает статические файлы, обновляет нужные директории, перезапускает контейнеры бота и предлагает удобное меню для перезагрузки веб-сервера Caddy.
+
+## ⚡ Быстрый запуск одной командой
+
+Вам не нужно ничего скачивать вручную. Просто скопируйте эту команду и вставьте в терминал вашего сервера:
+
+```bash
+curl -sSL [https://raw.githubusercontent.com/Zover1337/BedolagaCabinetAutoUpd/refs/heads/main/cabinet_updater.sh](https://raw.githubusercontent.com/Zover1337/BedolagaCabinetAutoUpd/refs/heads/main/cabinet_updater.sh) | bash
+
+```
+
+---
+
+## 🛠 Ручная установка (Альтернативный способ)
+
+Если вы хотите сначала скачать и посмотреть код скрипта перед запуском:
+
+**1. Скачайте скрипт:**
+
+```bash
+wget [https://raw.githubusercontent.com/Zover1337/BedolagaCabinetAutoUpd/refs/heads/main/cabinet_updater.sh](https://raw.githubusercontent.com/Zover1337/BedolagaCabinetAutoUpd/refs/heads/main/cabinet_updater.sh)
+
+```
+
+**2. Сделайте его исполняемым:**
+
+```bash
+chmod +x cabinet_updater.sh
+
+```
+
+**3. Запустите обновление:**
+
+```bash
+./cabinet_updater.sh
+
+```
+
+---
 
 ## 🚀 Что делает скрипт?
 
@@ -13,35 +52,10 @@
 * Снова поднимает контейнеры в фоновом режиме (`docker compose up -d`).
 * Интерактивно предлагает перезагрузить **Caddy** (через APT системным демоном или через Docker).
 
-## 🛠 Установка и запуск
-
-**1. Скачайте скрипт на ваш сервер** (или создайте файл вручную и скопируйте код):
-
-```bash
-nano update-cabinet.sh
-
-```
-
-**2. Сделайте скрипт исполняемым:**
-
-```bash
-chmod +x update-cabinet.sh
-
-```
-
-**3. Запустите обновление:**
-
-```bash
-./update-cabinet.sh
-
-```
-
----
-
-### ⚠️ Требования
+## ⚠️ Требования
 
 Для корректной работы скрипта убедитесь, что:
 
 * У вашего пользователя есть права `sudo`.
-* Установлен `docker` и `docker compose`.
-* Бот располагается в стандартной директории: `/opt/remnawave-bedolaga-telegram-bot` (если путь другой, измените переменную `WORK_DIR` внутри скрипта).
+* Установлен `curl` (или `wget`), `docker` и плагин `docker compose`.
+* Бот располагается в стандартной директории: `/opt/remnawave-bedolaga-telegram-bot` (именно туда переходит скрипт для команд `docker compose`).
