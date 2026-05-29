@@ -66,6 +66,7 @@ case $CADDY_CHOICE in
     2)
         echo -e "\e[33m[*] Перезагружаем Caddy (Docker)...\e[0m"
         docker exec caddy caddy reload --config /etc/caddy/Caddyfile
+        docker restart caddy
         ;;
     3|*)
         echo -e "\e[33m[*] Перезагрузка Caddy пропущена.\e[0m"
