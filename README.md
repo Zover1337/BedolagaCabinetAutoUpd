@@ -10,7 +10,7 @@
 Вам не нужно ничего скачивать вручную. Просто скопируйте эту команду и вставьте в терминал вашего сервера:
 
 ```bash
-curl -sSL [https://raw.githubusercontent.com/Zover1337/BedolagaCabinetAutoUpd/refs/heads/main/cabinet_updater.sh](https://raw.githubusercontent.com/Zover1337/BedolagaCabinetAutoUpd/refs/heads/main/cabinet_updater.sh) | bash
+curl -sSL https://raw.githubusercontent.com/Zover1337/BedolagaCabinetAutoUpd/refs/heads/main/cabinet_updater.sh | bash
 
 ```
 
@@ -23,7 +23,7 @@ curl -sSL [https://raw.githubusercontent.com/Zover1337/BedolagaCabinetAutoUpd/re
 **1. Скачайте скрипт:**
 
 ```bash
-wget [https://raw.githubusercontent.com/Zover1337/BedolagaCabinetAutoUpd/refs/heads/main/cabinet_updater.sh](https://raw.githubusercontent.com/Zover1337/BedolagaCabinetAutoUpd/refs/heads/main/cabinet_updater.sh)
+wget https://raw.githubusercontent.com/Zover1337/BedolagaCabinetAutoUpd/refs/heads/main/cabinet_updater.sh
 
 ```
 
